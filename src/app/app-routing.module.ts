@@ -28,6 +28,7 @@ import { SignupComponent } from './components/pages/signup/signup.component';
 import { SingleIntegrationComponent } from './components/pages/single-integration/single-integration.component';
 import { SingleServiceComponent } from './components/pages/single-service/single-service.component';
 import {ProfileComponent} from "./profile/profile.component";
+import {UpdateProfileComponent} from "./profile/update-profile/update-profile.component";
 
 const routes: Routes = [
   {
@@ -71,7 +72,8 @@ const routes: Routes = [
   { path: 'signup', component: SignupComponent },
   { path: 'password-reset', component: PasswordResetComponent },
   { path: 'coming-soon', component: ComingSoonComponent },
-  { path: 'employee/:id', component:ProfileComponent},
+  { path: 'employee/:name', component:ProfileComponent},
+  { path: 'employee/:name/edit', component: UpdateProfileComponent},
   { path: '**', pathMatch: 'full', component: PageNotFoundComponent },
 ];
 

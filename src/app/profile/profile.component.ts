@@ -11,13 +11,13 @@ import {Employee} from "../models/Employee";
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
-   empId$: Observable<number> = this.activatedRoute.params.pipe(
-    map((params: Params)=> parseInt(params['id']))
+   empName$: Observable<string> = this.activatedRoute.params.pipe(
+    map((params: Params)=> params['name'])
   )
 
-  emp$ : Observable<Employee> = this.empId$.pipe(
-    switchMap((empId:number)=>
-      this.es.getEmpById(empId)
+  emp$ : Observable<Employee> = this.empName$.pipe(
+    switchMap((empName:string)=>
+      this.es.getEmpByName(empName)
     )
   )
   constructor(private activatedRoute: ActivatedRoute, private es: EmployeeService) {}

@@ -128,6 +128,8 @@ import { WhyChooseUsListComponent } from './components/pages/home-five/why-choos
 import { ProfileComponent } from './profile/profile.component';
 import { ContentComponent } from './profile/content/content.component';
 import {HttpClientModule} from "@angular/common/http";
+import { UpdateProfileComponent } from './profile/update-profile/update-profile.component';
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -253,8 +255,9 @@ import {HttpClientModule} from "@angular/common/http";
     WhyChooseUsListComponent,
     ProfileComponent,
     ContentComponent,
+    UpdateProfileComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, SwiperModule, HttpClientModule],
+  imports: [BrowserModule, AppRoutingModule, SwiperModule, HttpClientModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent],
 })
