@@ -1,10 +1,11 @@
-<app-header></app-header>
+<app-header [dark]="true"></app-header>
 <section  class="job-details ptb-120">
   <div class="container">
   <div
     *ngIf="emp$|async as emp"
-    class="author-wrap text-center bg-light p-5 rounded-custom mt-5 mt-lg-0"
+    class="author-wrap text-center bg-gradient p-5 rounded-custom mt-5 mt-lg-0"
   >
+    <!-- "{{this.es.baseURL}}"-->
     <img
       src="assets/img/team/team-2.jpg"
       alt="author"
@@ -38,10 +39,14 @@
       <div class="col-lg-8 pe-lg-5">
         <div class="job-details-wrap">
           <h2>Post History</h2>
-          <div *ngFor="let post of emp.posts ">
           <div class="job-details-info mt-5">
-            <ul class="content-list list-group-item list-group-item-primary">
-              <h5 class="fa fa-note-sticky">
+            <div class="search ">
+              <input style="width: 7cm" class="searchTerm fa fa-search rounded-3" type="text" name="search" [(ngModel)]="term" autocomplete="off" placeholder="&#61442; searching for a post by name ">
+            </div>
+          <div *ngFor="let post of emp.posts| filter:term">
+
+            <ul class="content-list list-group-item list-group-item-primary bg-dark-light">
+              <h5 class="fa fa-file-pen ">
                 {{post.description}}
               </h5>
               <br>
@@ -51,45 +56,13 @@
             </ul>
           </div>
           </div>
-        <!--  <div class="job-details-info mt-5">
-            <h3 class="h5">test 2</h3>
-            <ul class="content-list list-unstyled">
-              <li>
-                testt
-              </li>
-              <li>
-                testtt
-              </li>
-
-            </ul>
-          </div>
-
-          <div class="job-details-info mt-5">
-            <h3 class="h5">Tesssst 2 </h3>
-            <ul class="content-list list-unstyled">
-              <li>
-                tesstttt
-              </li>
-              <li>TEsssts</li>
-              <li>
-                teeeest
-              </li>
-
-            </ul>
-          </div>-->
-
-          <!--<img
-            src="assets/img/apply-now-1.jpg"
-            class="img-fluid mt-5 rounded-custom"
-            alt="apply"
-          />-->
         </div>
       </div>
       <div class="col-lg-4">
         <div
-          class="job-overview-wrap bg-light p-5 sticky-sidebar rounded-custom mt-5 mt-lg-0"
+          class="job-overview-wrap bg-dark p-5 sticky-sidebar rounded-custom mt-5 mt-lg-0 "
         >
-          <h5>General Infos</h5>
+          <h5>About</h5>
           <ul class="job-overview-list list-unstyled mt-4">
             <li>
               <i class="far fa-map-marker-alt text-primary"></i>
@@ -115,12 +88,12 @@
             <li>
               <i class="far fa-phone text-primary"></i>
               <div class="overview-item">
-                <h6 class="mb-0">Phone:</h6>
+                <h6 class="mb-0 about-content-left">Phone:</h6>
                 <span>{{emp.phone}}</span>
               </div>
             </li>
             <li>
-              <i class="far fa-wallet text-primary"></i>
+              <i class="far fa-birthday-cake text-primary"></i>
               <div class="overview-item">
                 <h6 class="mb-0">Birthday:</h6>
                 <span>{{emp.birthday}}</span>

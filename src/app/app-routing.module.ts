@@ -29,6 +29,9 @@ import { SingleIntegrationComponent } from './components/pages/single-integratio
 import { SingleServiceComponent } from './components/pages/single-service/single-service.component';
 import {ProfileComponent} from "./profile/profile.component";
 import {UpdateProfileComponent} from "./profile/update-profile/update-profile.component";
+import {ComplaintComponent} from "./complaint/complaint.component";
+import {AddComplaintComponent} from "./complaint/add-complaint/add-complaint.component";
+import {RatingsComponent} from "./ratings/ratings.component";
 
 const routes: Routes = [
   {
@@ -74,6 +77,10 @@ const routes: Routes = [
   { path: 'coming-soon', component: ComingSoonComponent },
   { path: 'employee/:name', component:ProfileComponent},
   { path: 'employee/:name/edit', component: UpdateProfileComponent},
+  { path: 'my-complaints/:id', component: ComplaintComponent},
+  { path: 'delete-complaint/:id', component: ComplaintComponent},
+  { path: 'complaint', component: AddComplaintComponent},
+  { path: 'ratings', component: RatingsComponent},
   { path: '**', pathMatch: 'full', component: PageNotFoundComponent },
 ];
 

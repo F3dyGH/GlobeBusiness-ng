@@ -129,7 +129,16 @@ import { ProfileComponent } from './profile/profile.component';
 import { ContentComponent } from './profile/content/content.component';
 import {HttpClientModule} from "@angular/common/http";
 import { UpdateProfileComponent } from './profile/update-profile/update-profile.component';
-import {FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import { ComplaintComponent } from './complaint/complaint.component';
+import { AddComplaintComponent } from './complaint/add-complaint/add-complaint.component';
+import { DeleteComplaintComponent } from './complaint/delete-complaint/delete-complaint.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatButtonModule} from "@angular/material/button";
+import {MatDialogModule} from "@angular/material/dialog";
+import {Ng2SearchPipeModule} from "ng2-search-filter";
+import {RatingsComponent} from "./ratings/ratings.component";
+import { NgxStarRatingModule } from 'ngx-star-rating';
 
 @NgModule({
   declarations: [
@@ -256,8 +265,13 @@ import {FormsModule} from "@angular/forms";
     ProfileComponent,
     ContentComponent,
     UpdateProfileComponent,
+    ComplaintComponent,
+    AddComplaintComponent,
+    DeleteComplaintComponent,
+    RatingsComponent
   ],
-  imports: [BrowserModule, AppRoutingModule, SwiperModule, HttpClientModule, FormsModule],
+  imports: [BrowserModule, AppRoutingModule, SwiperModule, HttpClientModule, FormsModule,ReactiveFormsModule, BrowserAnimationsModule, MatButtonModule,
+    MatDialogModule, Ng2SearchPipeModule, NgxStarRatingModule],
   providers: [],
   bootstrap: [AppComponent],
 })

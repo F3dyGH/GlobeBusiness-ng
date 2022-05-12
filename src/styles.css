@@ -4055,3 +4055,6 @@ li.setup-process-item:not(:last-child):before {
 .offcanvas-backdrop::before {
   display: none;
 }
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

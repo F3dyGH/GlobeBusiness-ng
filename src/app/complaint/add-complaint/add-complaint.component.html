@@ -1,0 +1,39 @@
+<app-header></app-header>
+<section  class="job-details ptb-120">
+  <div class="container">
+    <div
+      class="author-wrap text-center bg-light p-5 rounded-custom mt-5 mt-lg-0"
+    >
+      <h1>Edit Personal Infos</h1>
+      <br>
+      <br>
+      <form class="register-form" (ngSubmit)="addComplaint()">
+        <div class="row">
+          <div class="col-sm-6">
+            <label for="title" class="mb-1">title</label>
+            <div class="input-group mb-3">
+              <input type="text" class="form-control" id="title" required [(ngModel)]="complaint.title" name="title" >
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <label for="description" class="mb-1">description</label>
+            <div class="input-group mb-3">
+              <input type="text" class="form-control" id="description" required [(ngModel)]="complaint.description" name="description" >
+            </div>
+          </div>
+          <!--<div class="col-sm-6">
+            <label for="date" class="mb-1">date</label>
+            <div class="input-group mb-3">
+              <input type="date" class="form-control" id="date" required [(ngModel)]="emp.birthday" name="birthday" >
+            </div>
+          </div>-->
+          <button type="submit" class="btn btn-success">Submit</button>
+        </div>
+      </form>
+    </div>
+
+  </div>
+
+</section>
+
+<app-footer [dark]="true"></app-footer>

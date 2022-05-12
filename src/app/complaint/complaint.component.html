@@ -1,0 +1,178 @@
+<app-header [dark]="true"></app-header>
+<section  class="job-details ptb-120">
+  <div class="container">
+    <div
+      class="author-wrap text-center bg-light p-5 rounded-custom mt-5 mt-lg-0"
+    >
+      <h1>My Complaints</h1>
+      <div class="job-details-info mt-5" >
+        <!--<ul *ngIf="comp$|async as comp" class="content-list list-group-item list-group-item-primary" >
+          <h5 class="fa fa-file">
+            {{comp.title}}
+          </h5>
+          <br>
+          <p>
+                 {{comp.description}}
+          </p>
+          <button type="submit" class="fa fa-delete-right">Delete</button>
+        </ul>-->
+        <form class="register-form form-control-plaintext" (ngSubmit)="delete()" *ngIf="comp$|async as comp">
+          <div class="row">
+            <div class="col-sm-6">
+              <label for="title" class="mb-1">Title</label>
+              <div class="mb-3">
+                <input type="text" class="form-control-plaintext" id="title" disabled [(ngModel)]="comp.title" name="title" >
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <label for="description" class="mb-1">Description</label>
+              <div class="input-group mb-3">
+                <input type="text" class="form-control-plaintext" id="description" required [(ngModel)]="comp.description" name="description" >
+              </div>
+            </div>
+            <main id="show-projects-button-holder">
+              <button type="submit" class="btn btn-success">Submit</button>
+            </main>
+          </div>
+        </form>
+      </div>
+    </div>
+    </div>
+    <!--<div
+      *ngIf="comp$|async as comp"
+      class="author-wrap text-center bg-light p-5 rounded-custom mt-5 mt-lg-0"
+    >
+      <img
+        src="assets/img/team/team-2.jpg"
+        alt="author"
+        width="120"
+        class="img-fluid shadow-sm rounded-circle"
+      />
+      <div class="author-info my-4">
+        <h5 class="mb-0">{{comp.name}}</h5>
+        <span class="small">{{comp.email}}</span>
+      </div>
+      &lt;!&ndash;<p>
+        Lorem ipsum dolor sit amet. Vel velit pariatur in voluptas quia ad quas repudiandae et modi soluta est aliquam facere eum harum adipisci sit internos internos. Id molestias fugiat et animi perferendis sit saepe voluptas est debitis modi id reprehenderit voluptatem. Et enim maxime est excepturi possimus qui ratione sint eos obcaecati esse 33 expedita autem qui sint velit.
+      </p>&ndash;&gt;
+      <ul class="list-unstyled author-social-list list-inline mt-3 mb-0">
+        <li class="list-inline-item">
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        </li>
+        <li class="list-inline-item">
+          <a href="#"><i class="fab fa-twitter"></i></a>
+        </li>
+        <li class="list-inline-item">
+          <a href="#"><i class="fab fa-github"></i></a>
+        </li>
+        <li class="list-inline-item">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+        </li>
+      </ul>
+      <br>
+      <br>
+      <div class="row justify-content-between">
+        <div class="col-lg-8 pe-lg-5">
+          <div class="job-details-wrap">
+            <h2>Post History</h2>
+            <div *ngFor="let post of comp.posts ">
+              <div class="job-details-info mt-5">
+                <ul class="content-list list-group-item list-group-item-primary">
+                  <h5 class="fa fa-note-sticky">
+                    {{post.description}}
+                  </h5>
+                  <br>
+                  <span class="fa fa-calendar-alt">
+                 {{post.datePost}}
+              </span>
+                </ul>
+              </div>
+            </div>
+            &lt;!&ndash;  <div class="job-details-info mt-5">
+                <h3 class="h5">test 2</h3>
+                <ul class="content-list list-unstyled">
+                  <li>
+                    testt
+                  </li>
+                  <li>
+                    testtt
+                  </li>
+
+                </ul>
+              </div>
+
+              <div class="job-details-info mt-5">
+                <h3 class="h5">Tesssst 2 </h3>
+                <ul class="content-list list-unstyled">
+                  <li>
+                    tesstttt
+                  </li>
+                  <li>TEsssts</li>
+                  <li>
+                    teeeest
+                  </li>
+
+                </ul>
+              </div>&ndash;&gt;
+
+            &lt;!&ndash;<img
+              src="assets/img/apply-now-1.jpg"
+              class="img-fluid mt-5 rounded-custom"
+              alt="apply"
+            />&ndash;&gt;
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div
+            class="job-overview-wrap bg-light p-5 sticky-sidebar rounded-custom mt-5 mt-lg-0"
+          >
+            <h5>General Infos</h5>
+            <ul class="job-overview-list list-unstyled mt-4">
+              <li>
+                <i class="far fa-map-marker-alt text-primary"></i>
+                <div class="overview-item">
+                  <h6 class="mb-0">Company:</h6>
+                  <span>{{comp.company.name}}</span>
+                </div>
+              </li>
+              <li>
+                <i class="far fa-user text-primary"></i>
+                <div class="overview-item">
+                  <h6 class="mb-0">Job Title:</h6>
+                  <span>{{comp.profession.name}}</span>
+                </div>
+              </li>
+              <li>
+                <i class="far fa-male text-primary"></i>
+                <div class="overview-item">
+                  <h6 class="mb-0">Gender:</h6>
+                  <span>{{comp.gender}}</span>
+                </div>
+              </li>
+              <li>
+                <i class="far fa-phone text-primary"></i>
+                <div class="overview-item">
+                  <h6 class="mb-0">Phone:</h6>
+                  <span>{{comp.phone}}</span>
+                </div>
+              </li>
+              <li>
+                <i class="far fa-wallet text-primary"></i>
+                <div class="overview-item">
+                  <h6 class="mb-0">Birthday:</h6>
+                  <span>{{comp.birthday}}</span>
+                </div>
+              </li>
+            </ul>
+            <a routerLink="/comployee/test2/edit" class="btn btn-primary d-block mt-5"
+            >Edit</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>-->
+
+
+
+</section>
+<app-footer [dark]="true"></app-footer>

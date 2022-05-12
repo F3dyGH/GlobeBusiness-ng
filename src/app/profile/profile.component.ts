@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {ActivatedRoute, Params} from "@angular/router";
 import {EmployeeService} from "../services/Employee/employee.service";
 import {map, Observable, switchMap} from "rxjs";
@@ -11,6 +11,8 @@ import {Employee} from "../models/Employee";
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
+  searchText = '';
+  term = '';
    empName$: Observable<string> = this.activatedRoute.params.pipe(
     map((params: Params)=> params['name'])
   )
@@ -23,7 +25,7 @@ export class ProfileComponent implements OnInit {
   constructor(private activatedRoute: ActivatedRoute, private es: EmployeeService) {}
   emp:any;
 
-  ngOnInit(): void {
+   ngOnInit(): void {
    /* this.activatedRoute.queryParams.subscribe(params =>{
       console.log(params)
       console.log(params['id'])
