@@ -1,23 +1,13 @@
-<div class="card user-profile o-hidden mb-4">
-  <div class="header-cover" style="background-image: url('assets/images/photo-wide-4.jpg')"></div>
-  <div class="user-info">
-    <img class="profile-picture avatar-lg mb-2" src="assets/images/faces/1.jpg" alt="">
-    <p class="m-0 text-24">Timothy Carlson</p>
-    <p class="text-muted m-0">Digital Marketer</p>
+<app-header [dark]="true"></app-header>
+<section  class="job-details ptb-120">
+  <div class="container">
+    <div
+      class="author-wrap text-center bg-gradient p-5 rounded-custom mt-5 mt-lg-0"
+    >
+      <h1>Informations Updated Successfully   <i class="fa fa-check-circle"></i> </h1>
+      <br>
+      <a routerLink="/employee/test2" class="btn btn-primary btn-rounded m-1">Ok</a>
+    </div>
   </div>
-  <div class="card-body">
-    <ul class="nav nav-tabs profile-nav mb-4" id="profileTab" role="tablist">
-
-      <li class="nav-item">
-        <a class="nav-link" id="about-tab" data-toggle="tab" href="#about" role="tab" aria-controls="about" aria-selected="true">About</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" id="friends-tab" data-toggle="tab" href="#friends" role="tab" aria-controls="friends" aria-selected="false">Friends</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" id="photos-tab" data-toggle="tab" href="#photos" role="tab" aria-controls="photos" aria-selected="false">Photos</a>
-      </li>
-    </ul>
-
-  </div>
-</div>
+</section>
+<app-footer [dark]="true"></app-footer>

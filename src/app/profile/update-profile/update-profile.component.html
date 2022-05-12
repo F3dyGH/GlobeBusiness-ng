@@ -40,7 +40,15 @@
           </div>
         </div>-->
         <main id="show-projects-button-holder">
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <!--<button type="submit" class="btn btn-primary">Submit</button>-->
+          <btn-loading
+            *ngFor="let btn of loadingButtons"
+            btnClass="btn-{{btn.name}} btn-rounded m-1 "
+            [loading]="btn.loading"
+            loadingText="   Loading..."
+            (click)="showLoading(btn)">
+            Submit
+          </btn-loading>
         </main>
       </div>
     </form>

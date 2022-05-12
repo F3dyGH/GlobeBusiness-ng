@@ -32,6 +32,7 @@ import {UpdateProfileComponent} from "./profile/update-profile/update-profile.co
 import {ComplaintComponent} from "./complaint/complaint.component";
 import {AddComplaintComponent} from "./complaint/add-complaint/add-complaint.component";
 import {RatingsComponent} from "./ratings/ratings.component";
+import {ContentComponent} from "./profile/content/content.component";
 
 const routes: Routes = [
   {
@@ -81,6 +82,7 @@ const routes: Routes = [
   { path: 'delete-complaint/:id', component: ComplaintComponent},
   { path: 'complaint', component: AddComplaintComponent},
   { path: 'ratings', component: RatingsComponent},
+  { path: 'success', component: ContentComponent},
   { path: '**', pathMatch: 'full', component: PageNotFoundComponent },
 ];
 

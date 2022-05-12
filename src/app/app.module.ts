@@ -139,6 +139,7 @@ import {MatDialogModule} from "@angular/material/dialog";
 import {Ng2SearchPipeModule} from "ng2-search-filter";
 import {RatingsComponent} from "./ratings/ratings.component";
 import { NgxStarRatingModule } from 'ngx-star-rating';
+import {BtnLoadingComponent} from "./profile/btn-loading/btn-loading.component";
 
 @NgModule({
   declarations: [
@@ -268,7 +269,8 @@ import { NgxStarRatingModule } from 'ngx-star-rating';
     ComplaintComponent,
     AddComplaintComponent,
     DeleteComplaintComponent,
-    RatingsComponent
+    RatingsComponent,
+    BtnLoadingComponent
   ],
   imports: [BrowserModule, AppRoutingModule, SwiperModule, HttpClientModule, FormsModule,ReactiveFormsModule, BrowserAnimationsModule, MatButtonModule,
     MatDialogModule, Ng2SearchPipeModule, NgxStarRatingModule],

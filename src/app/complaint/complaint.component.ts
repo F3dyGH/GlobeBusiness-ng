@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {map, Observable, switchMap} from "rxjs";
+import {map, switchMap} from "rxjs/operators";
+import {Observable} from "rxjs";
 import {ComplaintService} from "../services/Complaint/complaint.service";
 import {ActivatedRoute, Params, Router} from "@angular/router";
 import {Complaint} from "../models/Complaint";

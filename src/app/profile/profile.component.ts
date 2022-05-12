@@ -1,7 +1,8 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {ActivatedRoute, Params} from "@angular/router";
 import {EmployeeService} from "../services/Employee/employee.service";
-import {map, Observable, switchMap} from "rxjs";
+import {map, switchMap} from "rxjs/operators";
+import {Observable} from "rxjs";
 import {Employee} from "../models/Employee";
 
 
